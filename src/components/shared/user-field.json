@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_user_fields",
+  "info": {
+    "displayName": "userField"
+  },
+  "options": {},
+  "attributes": {
+    "fullname": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -20,6 +20,11 @@
     },
     "description": {
       "type": "text"
+    },
+    "fullname": {
+      "type": "component",
+      "component": "shared.user-field",
+      "repeatable": true
     }
   },
   "config": {}
