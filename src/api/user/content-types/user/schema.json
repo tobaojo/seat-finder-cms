@@ -19,11 +19,8 @@
       "type": "string",
       "required": true
     },
-    "seat": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::seat.seat",
-      "mappedBy": "user"
+    "tableNumber": {
+      "type": "string"
     }
   }
 }

@@ -9,21 +9,11 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": false
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "seatNumber": {
       "type": "string",
       "required": true
-    },
-    "user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::user.user",
-      "inversedBy": "seat"
     }
   }
 }

@@ -2,6 +2,6 @@
  * user router
  */
 
-import { factories } from '@strapi/strapi';
+import { factories } from "@strapi/strapi";
 
-export default factories.createCoreRouter('api::user.user');
+export default factories.createCoreRouter("api::user.user");
