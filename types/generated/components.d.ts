@@ -13,6 +13,25 @@ export interface SharedHero extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedTest extends Struct.ComponentSchema {
+  collectionName: 'components_shared_tests';
+  info: {
+    displayName: 'test';
+  };
+  attributes: {};
+}
+
+export interface SharedUploader extends Struct.ComponentSchema {
+  collectionName: 'components_shared_uploaders';
+  info: {
+    displayName: 'uploader';
+    icon: 'bulletList';
+  };
+  attributes: {
+    file: Schema.Attribute.Media<'files'>;
+  };
+}
+
 export interface SharedUserField extends Struct.ComponentSchema {
   collectionName: 'components_shared_user_fields';
   info: {
@@ -23,11 +42,26 @@ export interface SharedUserField extends Struct.ComponentSchema {
   };
 }
 
+export interface ThemeUi extends Struct.ComponentSchema {
+  collectionName: 'components_theme_uis';
+  info: {
+    displayName: 'ui';
+  };
+  attributes: {
+    colourPicker: Schema.Attribute.String &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
+    primaryBorderColor: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'shared.hero': SharedHero;
+      'shared.test': SharedTest;
+      'shared.uploader': SharedUploader;
       'shared.user-field': SharedUserField;
+      'theme.ui': ThemeUi;
     }
   }
 }

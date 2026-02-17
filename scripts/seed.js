@@ -28,7 +28,27 @@ async function createUser(user) {
 }
 
 async function seedUsers() {
-  fs.readFile("scripts/csvjson1.json", (err, data) => {
+  const uploadsDir = "public/uploads";
+
+  // Find the most recent JSON file in uploads
+  const files = fs
+    .readdirSync(uploadsDir)
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => ({
+      name: file,
+      time: fs.statSync(`${uploadsDir}/${file}`).mtime.getTime(),
+    }))
+    .sort((a, b) => b.time - a.time);
+
+  if (files.length === 0) {
+    console.error("No JSON files found in uploads directory");
+    return;
+  }
+
+  const latestFile = `${uploadsDir}/${files[0].name}`;
+  console.log(`Reading from: ${latestFile}`);
+
+  fs.readFile(latestFile, (err, data) => {
     if (err) throw err;
     const userData = JSON.parse(data);
     const mappedUsers = userData.map((user) => ({

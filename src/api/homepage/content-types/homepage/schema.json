@@ -15,6 +15,16 @@
       "type": "component",
       "component": "shared.hero",
       "repeatable": false
+    },
+    "theme": {
+      "type": "component",
+      "component": "theme.ui",
+      "repeatable": false
+    },
+    "uploader": {
+      "type": "component",
+      "component": "shared.uploader",
+      "repeatable": false
     }
   }
 }

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_uploaders",
+  "info": {
+    "displayName": "uploader",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}
